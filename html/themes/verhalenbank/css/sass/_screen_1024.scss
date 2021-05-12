@@ -1,0 +1,299 @@
+header {
+    @include pie-clearfix;
+    @include leader(1);
+}
+
+#site-title {
+    @include span-columns (8 alpha, 12);
+    text-align: left;
+    float: left;
+    
+    &:after {
+        content: "";
+        display: block;
+        height: 0px;
+        clear: both;
+    }
+}
+
+#search-container {
+    @include span-columns(3 alpha, 12);
+    @include leader(1.5);
+    float: right;
+    input { padding: rhythm(.3125) 16px; }
+
+    > #advanced-search-link{
+        width: 150px;
+    }
+    
+    > div{
+        width: 100%;
+        visibility: visible;
+        margin: 4px;
+        position: relative;
+        word-wrap: normal;
+    }
+}
+
+nav.top {
+    ul { 
+        display: block; 
+        position: relative;
+        z-index: 1000;
+        li {
+            float: left;
+            width: auto;
+            position: relative;
+            
+            a { padding: rhythm(.5) 8px; }
+            
+            &:hover {
+                background-color:rgba(0,0,0,.05);
+                & > ul { display: block; }
+            }
+
+            ul {
+                min-width: 200px;
+                display: none;
+                padding: 0;
+                position: absolute;
+                top: rhythm(2);
+                left: 0px;
+                
+                li {
+                    width: 100%;
+                    clear: both;
+                    padding: 0;
+                    @include box-sizing(border-box);
+                    
+                    ul {
+                    position: absolute;
+                    left: 100%;
+                    top: 0;
+                    }
+                }
+            }
+        }
+    }
+    .mobile { display: none; }
+}
+
+header, nav.top, #content, footer {
+    @include pie-clearfix;
+    @include pre(1);
+    @include post(1);
+/*    @include prefix(1);
+    @include suffix(1);*/
+
+}
+
+#site-title {
+    font-size: 2.5 * $base-font-size;
+    line-height: 2 * $base-line-height;
+    left: 60px;
+    font-weight: 300;
+    text-align: center;
+    margin: 8;
+    @include padding-leader(.5);
+    @include padding-trailer(.3);
+    
+    > #logowrapper {
+        position: relative;
+        width: 510px;
+        left: -80px;
+    }
+}
+
+
+/* == Content == */
+
+    /* -- Structure -- */
+    #content {
+        clear:both;
+        overflow:visible;
+        padding: rhythm(0.25) 16px;
+    }
+    
+    
+    
+
+#content .pagination_list {
+    float: left;
+}
+
+#home {
+    #content {
+        #intro {
+                border-top: 20px;
+                background-color: transparent;
+                padding: 20px;
+                margin: 0;
+                font-size: 1.2 * $base-font-size;
+                line-height: 1.4 * $base-line-height;
+                @include box-shadow(transparent 0 0 0);
+                @include trailer(.5);
+                
+                p { margin: 0; }
+            }
+
+        #featured-item {
+            float: left;
+            clear: left;
+            @include trailer();
+            @include span-columns(4 alpha, 12);
+            *margin-left: 0;
+            
+            .image {
+                display: inline-block;
+                width: 100%;
+            }
+            
+            .image img {
+                width: 100%;
+                max-width: 100%;
+                height: auto;
+                margin: 0;
+            }
+        }
+        
+        & > div {
+            @include span-columns(8 omega, 12);
+            
+            img {
+                width: 20%;
+                float: left;
+            }
+        }
+
+    }
+}
+
+.items {
+    
+    #content div#sort-links {
+        float: right;
+        text-align: center;
+    }
+    
+    .item { clear: both;}
+    
+    .item-img {
+        width: 10%;
+        float: left;
+    }
+        
+    #advanced-search-form {
+    
+        & > div {
+            @include span-columns(5 alpha, 8);
+            clear: both;
+        }
+        
+        & > div:last-of-type {
+            width: auto;
+        }
+    }
+}
+
+.item, #exhibit.exhibit-item-show, .files {
+    #primary {
+        *margin-left: 0;
+        @include span-columns (5 alpha, 8);
+    }
+
+    
+    #sidebar {
+        display: inline-block;
+        float: right;
+        clear: right;
+        @include span-columns (3 omega, 8);
+                        
+    }
+}
+
+.collections.show {
+    #primary .element-set {
+        @include span-columns (5 alpha, 8);
+        *margin-left: 0;
+    }
+    
+    #primary > div {
+        @include span-columns(3 omega, 8);
+        clear: right;
+    }
+    
+    .item-img { margin-left: 0; }
+}
+
+#search-filters, #item-filters {
+    li { 
+        float: left; 
+        vertical-align: top;
+        ul { 
+            display: inline; 
+            margin: 0;
+            padding: 0;
+            li {
+                display: inline;
+                padding: 0;
+                margin: 0;
+                float: none;
+            }
+        }
+    }
+}
+
+#search-results {
+    width: 100%;
+}
+
+.page #content #primary {
+    @include padding-leader(2);
+    @include padding-trailer(2);
+}
+
+/* Exhibits */
+
+.gallery-full-left, .gallery-full-right, .gallery-thumbnails,
+.gallery-thumbnails-text-bottom, .gallery-thumbnails-text-top, .image-list-left,
+.image-list-left-thumbs, .image-list-right, .image-list-right-thumbs,
+.text, .text-image-left, .text-image-right {
+}
+
+#exhibit.summary {
+    #primary { 
+        @include span-columns(8 alpha, 12); 
+    }
+
+    #exhibit-pages { 
+        display: inline-block;
+        float: right;
+        @include span-columns (4 omega, 12); 
+    }
+}
+
+#exhibit.show #content {
+    .exhibit-page-nav {
+        & > li:first-child {
+            background-color: rgba(0,0,0,.1);
+            float: left;
+        }
+        
+        & > li:nth-child(2) li:first-of-type { padding-left: 8px; }
+    }
+
+    #exhibit-page-navigation {
+        #exhibit-nav-prev { text-align: left; }
+        
+        #exhibit-nav-next { text-align: right; }
+    
+        & > div { 
+            padding: 0; 
+            width: 33%;
+        }
+        
+        a, span { width: auto; }
+    
+    }
+
+}

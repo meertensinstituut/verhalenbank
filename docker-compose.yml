@@ -1,0 +1,44 @@
+version: '3.4'
+
+services:
+  web:
+    build: ./web
+    volumes:
+      - ./html:/var/www/html
+    depends_on:
+      - db
+    ports:
+      - 80:80
+      
+  db:
+    image: mariadb:latest
+    volumes:
+      - data-volume:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+    ports:
+      - 3306:3306
+
+  phpmyadmin:
+    image: 'phpmyadmin/phpmyadmin'
+    ports:
+      - 8080:80
+    depends_on:
+      - db
+    environment:
+      - MYSQL_USERNAME=root
+      - MYSQL_ROOT_PASSWORD=example
+      - PMA_HOST=db
+
+#  solr:
+#    image: solr:6.6.2
+#    ports:
+#      - "8983:8983"
+#    environment:
+#      - SOLR_VERSION=6.6.2
+#    volumes:
+#       - solr-volume:/solr/omeka
+
+volumes:
+  data-volume:
+#  solr-volume:

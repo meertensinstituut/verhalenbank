@@ -1,0 +1,90 @@
+// ---------------------------------------------------------------------------
+// Imports
+
+@import "compass";
+@import "susyone";
+@import "mixins";
+
+// ---------------------------------------------------------------------------
+// Basic Grid
+
+$base_font_weight: 300;
+$base-font-size: 14px;
+$base-line-height: 24px;
+$relative-font-sizing: false;
+
+$total-columns  : 7;
+$column-width   : 4em;
+$gutter-width   : 1em;
+$grid-padding   : $gutter-width;
+$break          : 50em 16;
+
+
+$winter-light-gray: #dfe2e2;
+
+
+/* ---------------------------------------------------------------------*/
+/* Night colors */
+
+$night-darkest: #000;
+$night-darker: #252525;
+$night-shadow: #313131;
+$night-light: #BDBDBD;
+$night-text-on-darker: #ccc;
+$night-text-on-lighter: #fff;
+$night-visited-nav: #6d6d6d;
+$night-visited: #C0A900;
+$night-link: #FFE000;
+$night-active: #FFFFA0;
+$night-highlight: #666;
+$night-content: #333333;
+
+
+
+
+/* ---------------------------------------------------------------------*/
+/* Night colors */
+
+$verhalenbank_border_colors: #ab2929;
+$verhalenbank_border_top_colors: #ab2929;
+
+$verhalenbank_super_h_colors: #555555;
+
+$verhalenbank_h_colors: #ab2929;
+
+$verhalenbank_bg_white: #FFFFFE;
+
+$verhalenbank_blackness: #000000;
+
+$verhalenbank_grey_buttons: #888888;
+$verhalenbank_grey_admin_bar: #444444;
+
+$verhalenbank_darker: #252525;
+
+$verhalenbank_shadow: #ab2929;
+
+$verhalenbank_bg_red: #bc5454;
+
+$verhalenbank_text_on_bg: #272727;
+
+$verhalenbank_text_on_lighter: #272727;
+
+$verhalenbank_superlight:   #CD7f7f;
+$verhalenbank_hyperlight:   #e8e8e8;
+
+$verhalenbank_nav_visited:  #FFFFFF;
+
+$verhalenbank_visited:      #bc5454;
+$verhalenbank_link:         #ab2929;
+$verhalenbank_active:       #ab2929;
+
+$verhalenbank_content: #333333;
+
+$verhalenbank_cccccc: #cccccc;
+
+$verhalenbank_file_color: #DAFCFF;
+$verhalenbank_lexicon_color: #DAFFDF;
+$verhalenbank_volksverhaaltype_color: #FFDCDC;
+$verhalenbank_textedition_color: #EBEBEB;
+$verhalenbank_volksverhaal_color: white;
+$verhalenbank_persoon_color: #FFFFDC;

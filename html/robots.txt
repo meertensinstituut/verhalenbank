@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /files/
+# tijdelijke hack JP 2017-08-26, robots op de verhalenbank lijken de hele webserver plat te leggen
+# Disallow: /
+# hopelijk definieve oplossing: ongewenste bots tegengehouden in .htaccess, in google search console
+# (google-account: meertenscommunicatie@gmail.com) crawl-delay van googlebot op 100 seconden gezet.
+# de enige bot die er toe doet is toch google.
