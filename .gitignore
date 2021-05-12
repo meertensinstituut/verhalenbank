@@ -17,3 +17,5 @@ html/db.ini.server.ini
 html/db.ini
 
 html/files/*
+
+html/application/logs/errors.log
