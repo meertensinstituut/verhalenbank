@@ -17,5 +17,6 @@ html/db.ini.server.ini
 html/db.ini
 
 html/files/*
+!html/files/README.md
 
 html/application/logs/errors.log
