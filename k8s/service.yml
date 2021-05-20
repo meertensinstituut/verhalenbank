@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: verhalenbank
+  namespace: verhalenbank
+spec:
+  selector:
+    app: verhalenbank
+  ports:
+  - name: verhalenbank-http
+    port: 80
+    protocol: TCP
+    targetPort: 80 # This is where the pod listens to

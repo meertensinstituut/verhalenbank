@@ -1,6 +1,6 @@
 .idea
 .idea/*
-
+.DS_Store
 .trieschnigg
 
 .vvb
@@ -14,8 +14,7 @@ includes
 includes/*
 
 html/db.ini.server.ini
-html/db.ini
-
+k8s/deployment.yml
 html/files/*
 !html/files/README.md
 

@@ -1,0 +1,62 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: verhalenbank
+  labels:
+    app: verhalenbank
+  namespace: verhalenbank
+spec:
+  selector:
+    matchLabels:
+      app: verhalenbank
+  strategy:
+    type: Recreate
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: verhalenbank
+        external-ingress: enabled
+    spec:
+      containers:
+        - image: registry.diginfra.net/verhalenbank_web:1.0.0
+          imagePullPolicy: IfNotPresent
+          resources:
+            limits:
+              cpu: 750m
+              memory: 1000Mi
+            requests:
+              cpu: 750m
+              memory: 1000Mi
+          name: verhalenbank
+          ports:
+            - containerPort: 80
+          readinessProbe:
+           httpGet:
+             path: /
+             port: 80
+           initialDelaySeconds: 15
+           periodSeconds: 10
+           successThreshold: 1
+          env:
+          - name: VERHALENBANK_DB_HOST
+            value: NOTSHOWN
+          - name: VERHALENBANK_DB_USER
+            value: NOTSHOWN
+          - name: VERHALENBANK_DB_PASSWORD
+            value: NOTSHOWN
+          - name: VERHALENBANK_DB
+            value: NOTSHOWN
+          - name: VERHALENBANK_DB_PREFIX
+            value: omeka_
+          - name: VERHALENBANK_DB_CHARSET
+            value: utf8
+          volumeMounts:
+            - name: webroot
+              mountPath: "/var/www/html"
+              readOnly: false
+      volumes:
+        - name: webroot
+          persistentVolumeClaim:
+            claimName: verhalenbank-webroot
+

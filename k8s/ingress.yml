@@ -1,0 +1,13 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: verhalenbank
+  namespace: verhalenbank
+spec:
+  rules:
+  - host: verhalenbank.diginfra.net
+    http:
+      paths:
+      - backend:
+          serviceName: verhalenbank
+          servicePort: 80
