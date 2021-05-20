@@ -63,6 +63,9 @@ if (($base_root == 'http' && $port != '80') || ($base_root == 'https' && $port !
     $base_url .= ":$port";
 }
 
+// HACK to make the site work behind a reverse proxy
+$base_url = $base_root = 'https://verhalenbank.diginfra.net';
+
 // Set the path.
 if ($dir = trim(dirname($_SERVER['SCRIPT_NAME']), '\,/')) {
     $base_path  = "/$dir";
