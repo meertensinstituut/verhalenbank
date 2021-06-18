@@ -1,0 +1,24 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  # any Pod name
+  name: temp
+  labels:
+    app: verhalenbank
+  namespace: verhalenbank
+spec:
+  containers:
+    - name: temp-pvc
+      image: nginx
+      ports:
+        - name: web
+          containerPort: 80
+      volumeMounts:
+        - name: share
+          # mount point in container
+          mountPath: /data
+  volumes:
+    - name: share
+      persistentVolumeClaim:
+        # PVC name you created
+        claimName: verhalenbank-webroot

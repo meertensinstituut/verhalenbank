@@ -5,7 +5,7 @@ metadata:
   namespace: verhalenbank
 spec:
   rules:
-  - host: verhalenbank.diginfra.net
+  - host: www.verhalenbank.nl
     http:
       paths:
       - backend:

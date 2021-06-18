@@ -17,7 +17,7 @@
     <!-- Stylesheets -->
     <?php
     queue_css_url("//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css");
-    queue_css_url('http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic,400italic,500italic,700italic');
+    queue_css_url('//fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic,400italic,500italic,700italic');
     queue_css_file('normalize');
     queue_css_file('style');
     queue_css_file('logo');

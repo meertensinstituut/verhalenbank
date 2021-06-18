@@ -348,7 +348,7 @@ De inhoud is daarom afgeschermd, en kan alleen worden geraadpleegd op het Meerte
                     pageLanguage: 'nl'
                 }, 'google_translate_element');
             }
-            </script><script src=\"http://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit\"></script>";
+            </script><script src=\"//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit\"></script>";
         return "TESTSTRING";
     }
     
