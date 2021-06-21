@@ -3,6 +3,8 @@ kind: Ingress
 metadata:
   name: verhalenbank
   namespace: verhalenbank
+  annotations:
+    nginx.ingress.kubernetes.io/proxy-body-size: 20m
 spec:
   rules:
   - host: www.verhalenbank.nl
