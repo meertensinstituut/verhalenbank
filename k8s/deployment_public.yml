@@ -51,6 +51,8 @@ spec:
             value: omeka_
           - name: VERHALENBANK_DB_CHARSET
             value: utf8
+          - name: VERHALENBANK_BASEURL
+            value: https://www.verhalenbank.nl
           volumeMounts:
             - name: webroot
               mountPath: "/var/www/html"
