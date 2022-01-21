@@ -3,11 +3,12 @@ kind: PersistentVolumeClaim
 metadata:
   labels:
     app: verhalenbank
-  name: verhalenbank-webroot
+  name: verhalenbank-webroot-tmp
   namespace: verhalenbank
 spec:
+  storageClassName: nfs-client-195-169-89-69
   accessModes:
     - ReadWriteOnce
   resources:
     requests:
-      storage: 10Gi
+      storage: 20Gi
